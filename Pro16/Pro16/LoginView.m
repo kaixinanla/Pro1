@@ -22,13 +22,14 @@
 
 @implementation LoginView
 
+
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
   if (self = [super initWithCoder:aDecoder]) {
     
     self.hasValidatePhoneNumber = NO;
     self.hasValidatePassword = NO;
-    
-    
+     
+      
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
   }
   return self;
@@ -38,9 +39,11 @@
 - (void)textFieldTextDidChange:(id)sender{
   
   UITextField *textField = ((NSNotification *)sender).object;
-  
+    textField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 0)];
+    textField.leftView.userInteractionEnabled = NO;
+    textField.leftViewMode = UITextFieldViewModeAlways;
   if ([textField isEqual:self.phoneNumberTextField]) {
-    
+      
     self.hasValidatePhoneNumber = NO;
     
     if (textField.text.length > 11) {
@@ -83,17 +86,13 @@
   }
 }
 -(IBAction)registerAction:(id)sender{
+     [self.delegate translateRegisterView];
+ 
 
-  [self.delegate translateRegisterView];
-    [UIView beginAnimations:@"View Flip" context:nil];
-    [UIView setAnimationDuration:1.25];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 }
 - (IBAction)resetPasswordAction:(id)sender{
     [self.delegate translateResetPassword];
-    [UIView beginAnimations:@"View Flip" context:nil];
-    [UIView setAnimationDuration:1.25];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+ 
 }
 
 -(IBAction)secretAction:(id)sender{
