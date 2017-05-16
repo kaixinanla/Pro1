@@ -78,6 +78,10 @@
         self.resetButton.enabled = YES;
     }else{
         self.resetButton.enabled = NO;
+    }if (self.hasValidatePhoneNumber) {
+        self.verificationButton.enabled = YES;
+    }else{
+        self.verificationButton.enabled = NO;
     }
     
 }

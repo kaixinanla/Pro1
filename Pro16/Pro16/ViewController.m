@@ -44,29 +44,34 @@
 }
 
 - (void)translateRegisterView {
-
+   
     __weak ViewController *weakSelf = self;
     [UIView animateWithDuration:0.3 animations:^{
         weakSelf.loginView.alpha = 0.0f;
         weakSelf.registerView.alpha = 1.0f;
+        weakSelf.resetPasswordView.alpha = 0.0f;
     } completion:^(BOOL finished) {
         [weakSelf.view bringSubviewToFront:self.registerView];
     }];
 }
 
 - (void)translateLoginView{
-    [self.view bringSubviewToFront:self.loginView];
+   
     __weak ViewController *weakSelf = self;
     [UIView animateWithDuration:0.3 animations:^{
         
         weakSelf.loginView.alpha = 1.0f;
         weakSelf.registerView.alpha = 0.0f;
+        weakSelf.resetPasswordView.alpha = 0.0f;
+
     } completion:^(BOOL finished) {
         
         [weakSelf.view bringSubviewToFront:self.loginView];
     }];
+    
 }
 - (void)translateResetPassword{
+    self.resetPasswordView.alpha = 1.0f;
     [self.view bringSubviewToFront:self.resetPasswordView ];
 }
 - (void)translateLoginView1{

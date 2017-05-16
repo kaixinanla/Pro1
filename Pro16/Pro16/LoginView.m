@@ -28,7 +28,7 @@
     
     self.hasValidatePhoneNumber = NO;
     self.hasValidatePassword = NO;
-     
+     _phoneNumberTextField.borderStyle = UITextBorderStyleRoundedRect;
       
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
   }
@@ -39,9 +39,6 @@
 - (void)textFieldTextDidChange:(id)sender{
   
   UITextField *textField = ((NSNotification *)sender).object;
-    textField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 0)];
-    textField.leftView.userInteractionEnabled = NO;
-    textField.leftViewMode = UITextFieldViewModeAlways;
   if ([textField isEqual:self.phoneNumberTextField]) {
       
     self.hasValidatePhoneNumber = NO;

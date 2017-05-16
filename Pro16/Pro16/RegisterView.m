@@ -77,6 +77,10 @@
         self.registerButton.enabled = YES;
     }else{
         self.registerButton.enabled = NO;
+    }if (self.hasValidatePhoneNumber) {
+        self.verificationButton.enabled = YES;
+    }else{
+        self.verificationButton.enabled = NO;
     }
       
 }
