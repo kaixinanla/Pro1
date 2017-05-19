@@ -46,10 +46,11 @@
 - (void)translateRegisterView {
    
     __weak ViewController *weakSelf = self;
+    weakSelf.resetPasswordView.alpha = 0.0f;
     [UIView animateWithDuration:0.3 animations:^{
         weakSelf.loginView.alpha = 0.0f;
         weakSelf.registerView.alpha = 1.0f;
-        weakSelf.resetPasswordView.alpha = 0.0f;
+        
     } completion:^(BOOL finished) {
         [weakSelf.view bringSubviewToFront:self.registerView];
     }];
@@ -58,11 +59,12 @@
 - (void)translateLoginView{
    
     __weak ViewController *weakSelf = self;
+    weakSelf.resetPasswordView.alpha = 0.0f;
     [UIView animateWithDuration:0.3 animations:^{
         
         weakSelf.loginView.alpha = 1.0f;
         weakSelf.registerView.alpha = 0.0f;
-        weakSelf.resetPasswordView.alpha = 0.0f;
+        
 
     } completion:^(BOOL finished) {
         

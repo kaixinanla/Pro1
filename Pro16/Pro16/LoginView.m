@@ -28,7 +28,7 @@
     
     self.hasValidatePhoneNumber = NO;
     self.hasValidatePassword = NO;
-     _phoneNumberTextField.borderStyle = UITextBorderStyleRoundedRect;
+    
       
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
   }
