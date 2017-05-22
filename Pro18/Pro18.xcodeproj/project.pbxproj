@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		089F155487942FBFEA3F96F3 /* libPods-Pro18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9F05E2C0814427BC349804 /* libPods-Pro18.a */; };
+		1468201B1ECEE05F00C1EAF5 /* APPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1468200E1ECEE05F00C1EAF5 /* APPCollectionViewCell.m */; };
+		1468201C1ECEE05F00C1EAF5 /* APPCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1468200F1ECEE05F00C1EAF5 /* APPCollectionViewCell.xib */; };
+		1468201D1ECEE05F00C1EAF5 /* image1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146820101ECEE05F00C1EAF5 /* image1.ico */; };
+		1468201E1ECEE05F00C1EAF5 /* image2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146820111ECEE05F00C1EAF5 /* image2.ico */; };
+		1468201F1ECEE05F00C1EAF5 /* image3.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146820121ECEE05F00C1EAF5 /* image3.ico */; };
+		146820201ECEE05F00C1EAF5 /* image4.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146820131ECEE05F00C1EAF5 /* image4.ico */; };
+		146820211ECEE05F00C1EAF5 /* image5.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146820141ECEE05F00C1EAF5 /* image5.ico */; };
+		146820221ECEE05F00C1EAF5 /* image6.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146820151ECEE05F00C1EAF5 /* image6.ico */; };
+		146820231ECEE05F00C1EAF5 /* image7.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146820161ECEE05F00C1EAF5 /* image7.ico */; };
+		146820241ECEE05F00C1EAF5 /* image8.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146820171ECEE05F00C1EAF5 /* image8.ico */; };
+		146820251ECEE05F00C1EAF5 /* image9.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146820181ECEE05F00C1EAF5 /* image9.ico */; };
+		146820261ECEE05F00C1EAF5 /* SjCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1468201A1ECEE05F00C1EAF5 /* SjCollectionViewController.m */; };
 		146DC4B41ECD8C1600ABDD26 /* image3.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146DC4B31ECD8C1600ABDD26 /* image3.ico */; };
 		146DC4B71ECD8C3700ABDD26 /* image1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146DC4B51ECD8C3700ABDD26 /* image1.ico */; };
 		146DC4B81ECD8C3700ABDD26 /* image2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 146DC4B61ECD8C3700ABDD26 /* image2.ico */; };
@@ -50,6 +62,20 @@
 
 /* Begin PBXFileReference section */
 		0A355E118D40C5161A01769A /* libPods-Pro18UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pro18UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1468200D1ECEE05F00C1EAF5 /* APPCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPCollectionViewCell.h; sourceTree = "<group>"; };
+		1468200E1ECEE05F00C1EAF5 /* APPCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPCollectionViewCell.m; sourceTree = "<group>"; };
+		1468200F1ECEE05F00C1EAF5 /* APPCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APPCollectionViewCell.xib; sourceTree = "<group>"; };
+		146820101ECEE05F00C1EAF5 /* image1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image1.ico; sourceTree = "<group>"; };
+		146820111ECEE05F00C1EAF5 /* image2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image2.ico; sourceTree = "<group>"; };
+		146820121ECEE05F00C1EAF5 /* image3.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image3.ico; sourceTree = "<group>"; };
+		146820131ECEE05F00C1EAF5 /* image4.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image4.ico; sourceTree = "<group>"; };
+		146820141ECEE05F00C1EAF5 /* image5.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image5.ico; sourceTree = "<group>"; };
+		146820151ECEE05F00C1EAF5 /* image6.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image6.ico; sourceTree = "<group>"; };
+		146820161ECEE05F00C1EAF5 /* image7.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image7.ico; sourceTree = "<group>"; };
+		146820171ECEE05F00C1EAF5 /* image8.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image8.ico; sourceTree = "<group>"; };
+		146820181ECEE05F00C1EAF5 /* image9.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image9.ico; sourceTree = "<group>"; };
+		146820191ECEE05F00C1EAF5 /* SjCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SjCollectionViewController.h; sourceTree = "<group>"; };
+		1468201A1ECEE05F00C1EAF5 /* SjCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SjCollectionViewController.m; sourceTree = "<group>"; };
 		146DC4B31ECD8C1600ABDD26 /* image3.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image3.ico; sourceTree = "<group>"; };
 		146DC4B51ECD8C3700ABDD26 /* image1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image1.ico; sourceTree = "<group>"; };
 		146DC4B61ECD8C3700ABDD26 /* image2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = image2.ico; sourceTree = "<group>"; };
@@ -150,9 +176,6 @@
 				14C972A11ECC16310009E8D0 /* ViewController.m */,
 				14C972CD1ECC16540009E8D0 /* HLTableViewController.h */,
 				14C972CE1ECC16540009E8D0 /* HLTableViewController.m */,
-				146DC4B51ECD8C3700ABDD26 /* image1.ico */,
-				146DC4B61ECD8C3700ABDD26 /* image2.ico */,
-				146DC4B31ECD8C1600ABDD26 /* image3.ico */,
 				14C972CF1ECC16540009E8D0 /* HLTableViewController.xib */,
 				14C972D21ECC17430009E8D0 /* PostsTableViewCell.h */,
 				14C972D31ECC17430009E8D0 /* PostsTableViewCell.m */,
@@ -163,6 +186,11 @@
 				14C972DA1ECC1A5A0009E8D0 /* MenuView.h */,
 				14C972DB1ECC1A5A0009E8D0 /* MenuView.m */,
 				14C972DF1ECC1A700009E8D0 /* MenuView.xib */,
+				1468200D1ECEE05F00C1EAF5 /* APPCollectionViewCell.h */,
+				1468200E1ECEE05F00C1EAF5 /* APPCollectionViewCell.m */,
+				1468200F1ECEE05F00C1EAF5 /* APPCollectionViewCell.xib */,
+				146820191ECEE05F00C1EAF5 /* SjCollectionViewController.h */,
+				1468201A1ECEE05F00C1EAF5 /* SjCollectionViewController.m */,
 				14C972A31ECC16310009E8D0 /* Main.storyboard */,
 				14C972A61ECC16310009E8D0 /* Assets.xcassets */,
 				14C972A81ECC16310009E8D0 /* LaunchScreen.storyboard */,
@@ -175,6 +203,18 @@
 		14C9729A1ECC16310009E8D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				146820101ECEE05F00C1EAF5 /* image1.ico */,
+				146820111ECEE05F00C1EAF5 /* image2.ico */,
+				146820121ECEE05F00C1EAF5 /* image3.ico */,
+				146820131ECEE05F00C1EAF5 /* image4.ico */,
+				146820141ECEE05F00C1EAF5 /* image5.ico */,
+				146820151ECEE05F00C1EAF5 /* image6.ico */,
+				146820161ECEE05F00C1EAF5 /* image7.ico */,
+				146820171ECEE05F00C1EAF5 /* image8.ico */,
+				146820181ECEE05F00C1EAF5 /* image9.ico */,
+				146DC4B51ECD8C3700ABDD26 /* image1.ico */,
+				146DC4B61ECD8C3700ABDD26 /* image2.ico */,
+				146DC4B31ECD8C1600ABDD26 /* image3.ico */,
 				14C9729B1ECC16310009E8D0 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -341,13 +381,23 @@
 			files = (
 				14C972DE1ECC1A610009E8D0 /* BannerView.xib in Resources */,
 				14C972AA1ECC16310009E8D0 /* LaunchScreen.storyboard in Resources */,
+				146820221ECEE05F00C1EAF5 /* image6.ico in Resources */,
+				146820231ECEE05F00C1EAF5 /* image7.ico in Resources */,
 				14C972E01ECC1A700009E8D0 /* MenuView.xib in Resources */,
+				1468201D1ECEE05F00C1EAF5 /* image1.ico in Resources */,
 				146DC4B41ECD8C1600ABDD26 /* image3.ico in Resources */,
 				14C972D61ECC17430009E8D0 /* PostsTableViewCell.xib in Resources */,
+				146820201ECEE05F00C1EAF5 /* image4.ico in Resources */,
 				14C972D11ECC16540009E8D0 /* HLTableViewController.xib in Resources */,
 				14C972A71ECC16310009E8D0 /* Assets.xcassets in Resources */,
+				146820251ECEE05F00C1EAF5 /* image9.ico in Resources */,
+				1468201E1ECEE05F00C1EAF5 /* image2.ico in Resources */,
 				14C972A51ECC16310009E8D0 /* Main.storyboard in Resources */,
+				146820241ECEE05F00C1EAF5 /* image8.ico in Resources */,
+				146820211ECEE05F00C1EAF5 /* image5.ico in Resources */,
 				146DC4B71ECD8C3700ABDD26 /* image1.ico in Resources */,
+				1468201F1ECEE05F00C1EAF5 /* image3.ico in Resources */,
+				1468201C1ECEE05F00C1EAF5 /* APPCollectionViewCell.xib in Resources */,
 				146DC4B81ECD8C3700ABDD26 /* image2.ico in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,10 +563,12 @@
 			files = (
 				14C972A21ECC16310009E8D0 /* ViewController.m in Sources */,
 				14C972D01ECC16540009E8D0 /* HLTableViewController.m in Sources */,
+				1468201B1ECEE05F00C1EAF5 /* APPCollectionViewCell.m in Sources */,
 				14C972D91ECC1A420009E8D0 /* BannerView.m in Sources */,
 				14C972D51ECC17430009E8D0 /* PostsTableViewCell.m in Sources */,
 				14C9729F1ECC16310009E8D0 /* AppDelegate.m in Sources */,
 				14C9729C1ECC16310009E8D0 /* main.m in Sources */,
+				146820261ECEE05F00C1EAF5 /* SjCollectionViewController.m in Sources */,
 				14C972DC1ECC1A5A0009E8D0 /* MenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

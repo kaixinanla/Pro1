@@ -11,8 +11,14 @@
 #import "BannerView.h"
 #import "MenuView.h"
 #import "Masonry.h"
-@interface HLTableViewController () <UITabBarDelegate,UITableViewDataSource>
+#import "SjCollectionViewController.h"
 
+
+
+
+
+@interface HLTableViewController () <UITabBarDelegate,UITableViewDataSource>
+@property(strong , nonatomic) SjCollectionViewController *svc;
 @end
 
 @implementation HLTableViewController
@@ -20,6 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"PostsTableViewCell" bundle:nil] forCellReuseIdentifier:@"PostsTableViewCell"];
+    self.svc = [[SjCollectionViewController alloc]initWithNibName:@"SjCollectionViewController" bundle:nil];
+    
+    __weak HLTableViewController *weakSelf = self;
+    [self.svc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(weakSelf).with.insets(UIEdgeInsetsMake(0, 200, 0, 0));
+    }];
     UIView *view = [[UIView alloc]init];
     view.backgroundColor = [UIColor clearColor];
     view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 350);
@@ -39,28 +51,31 @@
         make.left.equalTo(view).with.offset(0);
         make.height.mas_equalTo(@150);
     }];
+      
     self.tableView.tableHeaderView = view;
     UIScrollView *scrollView = [[UIScrollView alloc]init];
     scrollView.backgroundColor = [UIColor blueColor];
-    scrollView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 350);
-    scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width*3, 350);
+    scrollView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200);
+    scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width*3, 200);
     scrollView.pagingEnabled = YES;
   
     
     [view addSubview: scrollView];
-    UIPageControl *pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0,[UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.width, 150)];
+    UIPageControl *pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0,[UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.width*3, 30)];
     pageControl.numberOfPages = 3;
     pageControl.tag = 101;
     [scrollView addSubview:pageControl];
     float _x = 0;
     for (int index = 0; index <4; index ++) {
-        _imageView =[[UIImageView alloc]initWithFrame:CGRectMake(0 + _x, 0, [UIScreen mainScreen].bounds.size.width - 20, 350)];
+        _imageView =[[UIImageView alloc]initWithFrame:CGRectMake(0 + _x, 0, [UIScreen mainScreen].bounds.size.width - 20, 200)];
         NSString *imageName = [NSString stringWithFormat:@"image%d.ico" , index +1];
         _imageView.image = [UIImage imageNamed:imageName];
         [scrollView addSubview:_imageView];
         _x +=[UIScreen mainScreen].bounds.size.width;
         
     }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

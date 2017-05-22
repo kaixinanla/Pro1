@@ -7,8 +7,10 @@
 //
 
 #import "APPCollectionViewCell.h"
+#import "UIImageView+WebCache.h"
 @interface APPCollectionViewCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end

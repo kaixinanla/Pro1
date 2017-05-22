@@ -18,22 +18,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Acm-f8-q8X">
-                        <rect key="frame" x="55" y="55" width="50" height="50"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Acm-f8-q8X">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5v7-FE-Hef">
-                        <rect key="frame" x="59" y="20" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Acm-f8-q8X" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Fhn-hO-tB0"/>
+                <constraint firstItem="Acm-f8-q8X" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NWr-63-Nrh"/>
+                <constraint firstAttribute="bottom" secondItem="Acm-f8-q8X" secondAttribute="bottom" id="o4r-zU-Z0G"/>
+                <constraint firstAttribute="trailing" secondItem="Acm-f8-q8X" secondAttribute="trailing" id="xbq-9b-C6c"/>
+            </constraints>
             <connections>
                 <outlet property="iconView" destination="Acm-f8-q8X" id="Er7-i7-7FN"/>
-                <outlet property="nameLabel" destination="5v7-FE-Hef" id="QmP-ij-rDQ"/>
             </connections>
             <point key="canvasLocation" x="-67" y="55"/>
         </collectionViewCell>

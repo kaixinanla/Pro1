@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface APPCollectionViewCell : UICollectionViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @end
