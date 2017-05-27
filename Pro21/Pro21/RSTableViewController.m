@@ -10,7 +10,7 @@
 #import "SJTableViewCell.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
-#import "MJRefreshGifHeader.h"
+
 @interface RSTableViewController () <UITableViewDelegate,UITableViewDataSource>
 
 @property (copy , nonatomic) NSArray *idleImages;

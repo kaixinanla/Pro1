@@ -1,0 +1,8 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'Pro16' do
+pod 'IQKeyboardManager', '~> 4.0.9'
+pod 'Masonry', '~> 1.0.2'
+pod 'ReactiveCocoa', '~> 2.5'
+end

@@ -49,6 +49,9 @@
                     <constraint firstItem="8pm-m1-zr9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hQ2-3k-btm"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="hdiconView" destination="RLP-MK-jhw" id="0v5-AU-Lmw"/>
+            </connections>
             <point key="canvasLocation" x="26" y="25.5"/>
         </tableViewCell>
     </objects>
