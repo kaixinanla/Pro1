@@ -10,4 +10,11 @@
 #define XXNotificationConfiguration_h
 
 
+//#define XXLaunchCompletedNotification @"XXLaunchCompletedNotification"
+
+#define kXXLaunchCompletedNotification @"XXLaunchCompletedNotification"
+
 #endif /* XXNotificationConfiguration_h */
+
+
+

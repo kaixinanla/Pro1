@@ -7,7 +7,9 @@
 //
 
 #import "IndexViewController.h"
-
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "XXNotificationConfiguration.h"
+#import "WeiboViewController.h"
 @interface IndexViewController ()
 
 @end
@@ -16,7 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   @weakify(self)
+             
+ [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kXXLaunchCompletedNotification object:nil]subscribeNext:^(id x) {
+   WeiboViewController *weiboViewController = [[WeiboViewController alloc]initWithNibName:@"WeiboViewController" bundle:nil];
+   [self presentViewController:weiboViewController animated:NO completion:^{
+    
+   }];
+  }];
 }
 
 - (void)didReceiveMemoryWarning {
