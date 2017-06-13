@@ -29,9 +29,9 @@
     self.svc = [[SjCollectionViewController alloc]initWithNibName:@"SjCollectionViewController" bundle:nil];
     
     __weak HLTableViewController *weakSelf = self;
-    [self.svc.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(weakSelf).with.insets(UIEdgeInsetsMake(0, 200, 0, 0));
-    }];
+//    [self.svc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(weakSelf).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+//    }];
     UIView *view = [[UIView alloc]init];
     view.backgroundColor = [UIColor clearColor];
     view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 350);
@@ -61,7 +61,9 @@
   
     
     [view addSubview: scrollView];
-    UIPageControl *pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0,[UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.width*3, 30)];
+  //  UIPageControl *pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0,[UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.width*3, 30)];
+  UIPageControl *pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, 170, 100, 100)];
+  pageControl.tintColor = [UIColor redColor];
     pageControl.numberOfPages = 3;
     pageControl.tag = 101;
     [scrollView addSubview:pageControl];

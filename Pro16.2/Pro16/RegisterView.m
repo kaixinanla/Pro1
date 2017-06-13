@@ -92,7 +92,7 @@
     }
 }
 - (IBAction)loginViewButton:(id)sender{
-    [self.delegate translateLoginView];
+   // [self.delegate translateLoginView];
     
 }
 - (IBAction)secretButton:(id)sender{
@@ -109,7 +109,7 @@
 -(void)openCountdown{
     
     __block NSInteger time = 59; //倒计时时间
-    
+  __weak typeof (self)weakSelf = self;
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     
@@ -123,9 +123,9 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 //设置按钮的样式
-                [self.verificationButton setTitle:@"重新发送" forState:UIControlStateNormal];
+                [weakSelf.verificationButton setTitle:@"重新发送" forState:UIControlStateNormal];
              
-                self.verificationButton.userInteractionEnabled = YES;
+                weakSelf.verificationButton.userInteractionEnabled = YES;
             });
             
         }else{
@@ -134,9 +134,9 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 //设置按钮显示读秒效果
-                [self.verificationButton setTitle:[NSString stringWithFormat:@"重新发送(%.2d)", seconds] forState:UIControlStateNormal];
+                [weakSelf.verificationButton setTitle:[NSString stringWithFormat:@"重新发送(%.2d)", seconds] forState:UIControlStateNormal];
           
-                self.verificationButton.userInteractionEnabled = NO;
+                weakSelf.verificationButton.userInteractionEnabled = NO;
             });
             time--;
         }

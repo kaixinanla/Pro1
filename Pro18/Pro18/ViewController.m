@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "HLTableViewController.h"
 #import "Masonry.h"
-@interface ViewController ()<UITabBarDelegate,UITableViewDataSource>
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong , nonatomic)HLTableViewController *HLvc;
 @end
 
@@ -24,6 +24,7 @@
     [self.HLvc.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(weakSelf.view).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
+  
     
 }
 

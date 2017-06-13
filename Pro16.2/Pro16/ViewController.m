@@ -12,7 +12,7 @@
 #import "ResetPassword.h"
 #import "Masonry.h"
 #import "ReactiveCocoa.h"
-@interface ViewController () <RegisterViewDelegate,ResetPasswordDelegate>
+@interface ViewController () <ResetPasswordDelegate>
 //LoginViewDelegate
 @property (strong, nonatomic) LoginView *loginView;
 @property (strong, nonatomic) RegisterView *registerView;
@@ -26,23 +26,12 @@
   [super viewDidLoad];
   
   self.loginView =  [[[NSBundle mainBundle] loadNibNamed:@"LoginView" owner:self options:nil] lastObject];
- // self.loginView.delegate = self;
-  RACSubject *subject = [RACSubject subject];
-  [subject subscribeNext:^(id x) {
-    __weak ViewController *weakSelf = self;
-    weakSelf.resetPasswordView.alpha = 0.0f;
-    [UIView animateWithDuration:0.3 animations:^{
-      weakSelf.loginView.alpha = 0.0f;
-      weakSelf.registerView.alpha = 1.0f;
-      
-    } completion:^(BOOL finished) {
-      _loginView.subject = subject;
-      [self.view addSubview:_loginView];
-    }];
+  //self.loginView.delegate = self;
+  [[self.loginView rac_signalForSelector:@selector(translateRegisterView)]subscribeNext:^(id x) {
     
   }];
   self.registerView = [[[NSBundle mainBundle] loadNibNamed:@"RegisterView" owner:self options:nil] lastObject];
-  self.registerView.delegate = self;
+ // self.registerView.delegate = self;
   self.resetPasswordView = [[[NSBundle mainBundle] loadNibNamed:@"ResetPassword" owner:self options:nil]lastObject];
     self.resetPasswordView.delegate = self;
     [self.view addSubview:self.resetPasswordView];

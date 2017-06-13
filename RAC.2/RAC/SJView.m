@@ -15,6 +15,7 @@
 //  }
   [_subject sendNext:self];
   //[_subject sendCompleted];
+
 }
 
 

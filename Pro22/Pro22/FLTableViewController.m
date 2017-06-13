@@ -48,7 +48,7 @@
       return ;
     }
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    NSNumber *status = dic[@"status"];
+    NSNumber *status = dic[@"status"];
     if (status.integerValue != 1) {
       return;
     }

@@ -18,5 +18,6 @@
 @interface LoginView : UIView
 
 //@property (strong, nonatomic) id <LoginViewDelegate> delegate;
-@property (weak , nonatomic) RACSubject *subject;
+//@property (nonatomic, strong) RACSubject *delegateSignal;
+@property (strong , nonatomic) RACSubject *delegateSignal;
 @end

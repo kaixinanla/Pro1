@@ -23,32 +23,47 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  NSDictionary *dict = @{
+                         @"name":@"wangsicong",
+                         @"money":@1000000
+                         };
+   //RACTuple:元组
+   [dict.rac_sequence.signal subscribeNext:^(RACTuple * _Nullable x){
+     //把元组解析出来
+     RACTupleUnpack(NSString *key,id value) = x;
+     NSLog(@"%@   %@",key, value);
+   }];
+  //把值包装成元组
+  RACTuple *tuple = RACTuplePack(@1,@2,@3);
+  NSLog(@"%@",tuple);
+  
+}
+- (void)test{
   NSString *filePath = [[NSBundle mainBundle] pathForResource:@"statedictionary.plist" ofType:nil];
   NSArray *datas = [NSArray arrayWithContentsOfFile:filePath];
-//  datas = @[@1,@2,@3];
-  //map:映射
+  //datas = @[@1,@2,@3];
+  // map:映射
   //mapBlock：value参数：集合。返回值：需要映射成哪个值
-  [datas.rac_sequence map:^id(id value) {
+  NSMutableArray *arry = [NSMutableArray array];
+  arry = [[datas.rac_sequence map:^id(id value) {
     return [FlagItem itemWithDict:value];
-  }];
+  }]array];
+  NSLog(@"%@",arry);
   //转换RAC集合(RACSequence) 不能直接更新UI
-//  NSMutableArray *arry = [NSMutableArray array];
-//  [datas.rac_sequence.signal subscribeNext:^(id x) {
-//    NSLog(@"%@",x);
-//    FlagItem *item = [FlagItem itemWithDict:x];
-//    [arry addObject:item];
-//  }completed:^{
-//    NSLog(@"%@",arry);
-//  //
-//  }];
   
+  //  [datas.rac_sequence.signal subscribeNext:^(id x) {
+  //    NSLog(@"%@",x);
+  //    FlagItem *item = [FlagItem itemWithDict:x];
+  //    [arry objectAtIndex:item];
+  //  }completed:^{
+  //    NSLog(@"%@",arry);
+  //  }];
   
 }
 
-
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+  
 }
 
 @end

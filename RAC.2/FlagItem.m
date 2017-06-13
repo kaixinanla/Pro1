@@ -11,7 +11,7 @@
 @implementation FlagItem
 + (instancetype)itemWithDict:(NSDictionary *)dict{
   FlagItem *item = [[self alloc]init];
-  [item setValuesForKeysWithDictionary:dict];
+  [ item setValuesForKeysWithDictionary:dict];
   return item;
 }
 @end

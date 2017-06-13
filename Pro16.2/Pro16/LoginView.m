@@ -84,12 +84,15 @@
 }
 -(IBAction)registerAction:(id)sender{
      //[self.delegate translateRegisterView];
-  [_subject sendNext:self];
+  
 
 }
 - (IBAction)resetPasswordAction:(id)sender{
-   //[self.delegate translateResetPassword];
- [_subject sendNext:self];
+  // [self.delegateSigna translateResetPassword];
+  if (self.delegateSignal) {
+    [self.delegateSignal sendNext:nil];
+  }
+
 }
 
 -(IBAction)secretAction:(id)sender{

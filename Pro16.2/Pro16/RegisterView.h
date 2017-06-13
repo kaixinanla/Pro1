@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReactiveCocoa.h"
+//@protocol RegisterViewDelegate <NSObject>
 
-@protocol RegisterViewDelegate <NSObject>
 
+//- (void)translateLoginView;
 
-- (void)translateLoginView;
-
-@end
+//@end
 
 @interface RegisterView : UIView
-@property (strong , nonatomic) id <RegisterViewDelegate> delegate;
+//@property (strong , nonatomic) id <RegisterViewDelegate> delegate;
 
 @end
