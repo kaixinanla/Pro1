@@ -24,22 +24,14 @@
   self.jumpButton.backgroundColor = [UIColor blackColor];
   [self.view addSubview:self.jumpButton];
   [self.jumpButton addTarget:self action:@selector(goToAudioView) forControlEvents:UIControlEventTouchUpInside];
-  [self loadData];
-}
-
-- (void)loadData {
-  NSString *url = @"http://other.web.ra01.sycdn.kuwo.cn/resource/n3/128/17/55/3616442357.mp3";
-  [GetNetWorkingTool getUrl:url body:nil result:ADJSON headerFile:nil success:^(id result) {
-    
-  } failture:^(NSError *error) {
-    
-  }];
 }
 
 - (void)goToAudioView {
   AudioPlayerViewController *vc = [[AudioPlayerViewController alloc] init];
-  [self.navigationController pushViewController:vc animated:YES];
+  UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+  [self presentViewController:nav animated:YES completion:nil];
 }
+
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   

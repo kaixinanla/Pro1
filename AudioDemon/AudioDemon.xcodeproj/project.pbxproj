@@ -62,6 +62,7 @@
 		1430B2352059006100BE1A16 /* AudioTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioTools.m; sourceTree = "<group>"; };
 		1430B237205908BD00BE1A16 /* AudioPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerViewController.h; sourceTree = "<group>"; };
 		1430B238205908BD00BE1A16 /* AudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerViewController.m; sourceTree = "<group>"; };
+		145951EA205BC6C5006A6DA5 /* AudioDemon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AudioDemon.entitlements; sourceTree = "<group>"; };
 		1472A55F205A250600D9338B /* GetNetWorkingTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetNetWorkingTool.h; sourceTree = "<group>"; };
 		1472A560205A250600D9338B /* GetNetWorkingTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetNetWorkingTool.m; sourceTree = "<group>"; };
 		2C2E095D04838CCFFAF139E7 /* Pods-AudioDemonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioDemonUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioDemonUITests/Pods-AudioDemonUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 		1430B2012058FAE700BE1A16 /* AudioDemon */ = {
 			isa = PBXGroup;
 			children = (
+				145951EA205BC6C5006A6DA5 /* AudioDemon.entitlements */,
 				1430B2022058FAE700BE1A16 /* AppDelegate.h */,
 				1430B2032058FAE700BE1A16 /* AppDelegate.m */,
 				1430B2342059006100BE1A16 /* AudioTools.h */,
@@ -264,6 +266,14 @@
 					1430B1FE2058FAE700BE1A16 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 0;
+							};
+						};
 					};
 					1430B2162058FAE700BE1A16 = {
 						CreatedOnToolsVersion = 9.2;

@@ -25,21 +25,12 @@
 
 - (FSAudioStream *)playerInit {
   if (_audioStream == nil ) {
-    _audioStream=[[FSAudioStream alloc]init];
+    FSStreamConfiguration *config = [[FSStreamConfiguration alloc] init];
+    config.httpConnectionBufferSize *= 2;
+    config.enableTimeAndPitchConversion = YES;
+    _audioStream=[[FSAudioStream alloc] initWithConfiguration:config];
     [_audioStream setVolume:1];
   }
   return _audioStream;
-}
-
-- (void)play {
-  [_audioStream play];
-}
-
-- (void)stop {
-  [_audioStream stop];
-}
-
-- (void)backProgress {
-  [_audioStream rewind:15.0];
 }
 @end

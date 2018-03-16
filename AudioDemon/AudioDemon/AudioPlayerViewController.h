@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger,ADStreamerState) {
+  ADIdle              = 1,      //
+  ADLowState          = 2,      //
+  ADNormalState       = 3,      //
+  ADMoreState         = 4,      //
+  ADMostState         = 5,      //
+};
+
 @interface AudioPlayerViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *singDic;

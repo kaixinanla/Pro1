@@ -11,6 +11,7 @@
 #import <FSAudioStream.h>
 #import "AudioTools.h"
 
+
 @interface AudioPlayerViewController ()
 
 @property (nonatomic, strong) FSAudioStream *audioStream;
@@ -30,11 +31,18 @@
 @property (nonatomic, strong) UIButton *nextButton;
 @property (nonatomic, strong) UIButton *rewindButton;
 @property (nonatomic, strong) UIButton *forwardButton;
+@property (nonatomic, strong) UIButton *lowRateButton;
+@property (nonatomic, strong) UIButton *normalRateButton;
+@property (nonatomic, strong) UIButton *moreRateButton;
+@property (nonatomic, strong) UIButton *mostRateButton;
+@property (nonatomic, assign) ADStreamerState state;
 
 @end
 
 @implementation AudioPlayerViewController
-
+{
+  CGFloat playerRate;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
   self.view.backgroundColor = [UIColor colorWithRed:0.26 green:0.26 blue:0.26 alpha:1.00];
@@ -46,9 +54,9 @@
   self.audioStream = [[AudioTools shareInstance] playerInit];
   self.audioStream.url = [NSURL URLWithString:@"http://other.web.ra01.sycdn.kuwo.cn/resource/n3/128/17/55/3616442357.mp3"];
   __weak typeof(self) weakSelf = self;
+  self.state = ADIdle;
   [self.audioStream setVolume:1];
   [self.audioStream play];
-  
   self.audioStream.onFailure = ^(FSAudioStreamError error, NSString *description) {
     if (error == kFsAudioStreamErrorNone) {
       NSLog(@"播放出现问题");
@@ -60,8 +68,8 @@
   self.audioStream.onCompletion = ^{
     [weakSelf nextButtonAction];
   };
+  
   self.isPlaying = YES;
-  [_playButton setImage:[UIImage imageNamed:@"audioPause"] forState:UIControlStateNormal];
   self.playerTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(playProgressAction) userInfo:nil repeats:YES];
 }
 
@@ -85,7 +93,7 @@
   _nowTimeLabel.textColor = [UIColor blackColor];
   [self.view addSubview:_nowTimeLabel];
   [self.nowTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.mas_equalTo(15);
+    make.left.mas_equalTo(60);
     make.top.mas_equalTo(weakself.audioTitleImage.mas_bottom).offset(40);
     make.width.mas_equalTo(50);
     make.height.mas_equalTo(10);
@@ -96,8 +104,8 @@
   _playerProgress.tintColor = [UIColor blackColor];
   [self.view addSubview:self.playerProgress];
   [self.playerProgress mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.mas_equalTo(weakself.nowTimeLabel.mas_right).offset(0);
-    make.centerY.mas_equalTo(weakself.nowTimeLabel.mas_centerY);
+    make.left.mas_equalTo(60);
+    make.centerY.mas_equalTo(weakself.view.mas_centerY);
     make.width.mas_equalTo([UIScreen mainScreen].bounds.size.width - 130);
     make.height.mas_equalTo(2);
   }];
@@ -107,12 +115,11 @@
   _sliderProgress.continuous = YES;
   _sliderProgress.tintColor = [UIColor orangeColor];
   _sliderProgress.maximumTrackTintColor = [UIColor clearColor];
-  [_sliderProgress setThumbImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
   [_sliderProgress addTarget:self action:@selector(durationSliderTouch:) forControlEvents:UIControlEventValueChanged];
   [_sliderProgress addTarget:self action:@selector(durationSliderTouchEnded:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:_sliderProgress];
   [self.sliderProgress mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.mas_equalTo(weakself.nowTimeLabel.mas_right).offset(0);
+    make.left.mas_equalTo(60);
     make.width.mas_equalTo([UIScreen mainScreen].bounds.size.width - 130);
     make.top.mas_equalTo(weakself.playerProgress.mas_top).offset(-10);
     make.height.mas_equalTo(20);
@@ -183,6 +190,57 @@
     make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(90);
     make.width.height.mas_equalTo(40);
   }];
+  
+  _lowRateButton = [UIButton buttonWithType:UIButtonTypeCustom];
+  [_lowRateButton setTitle:@"0.5" forState:UIControlStateNormal];
+  [_lowRateButton addTarget:self action:@selector(lowRateChange) forControlEvents:UIControlEventTouchUpInside];
+  _lowRateButton.backgroundColor = [UIColor blueColor];
+  [self.view addSubview:_lowRateButton];
+  [self.lowRateButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.mas_equalTo(40);
+    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(150);
+    make.width.height.mas_equalTo(30);
+  }];
+  
+  _normalRateButton = [UIButton buttonWithType:UIButtonTypeCustom];
+  [_normalRateButton addTarget:self action:@selector(normalRateChange) forControlEvents:UIControlEventTouchUpInside];
+  [_normalRateButton setTitle:@"1.0" forState:UIControlStateNormal];
+  _normalRateButton.backgroundColor = [UIColor blueColor];
+  [self.view addSubview:_normalRateButton];
+  [self.normalRateButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.mas_equalTo(weakself.lowRateButton.mas_right).offset(20);
+    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(150);
+    make.width.height.mas_equalTo(30);
+  }];
+  
+  _moreRateButton = [UIButton buttonWithType:UIButtonTypeCustom];
+  [_moreRateButton addTarget:self action:@selector(moreRateChange) forControlEvents:UIControlEventTouchUpInside];
+  [_moreRateButton setTitle:@"1.5" forState:UIControlStateNormal];
+  _moreRateButton.backgroundColor = [UIColor blueColor];
+  [self.view addSubview:_moreRateButton];
+  [self.moreRateButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.mas_equalTo(weakself.normalRateButton.mas_right).offset(20);
+    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(150);
+    make.width.height.mas_equalTo(30);
+  }];
+  
+  _mostRateButton = [UIButton buttonWithType:UIButtonTypeCustom];
+  [_mostRateButton addTarget:self action:@selector(mostRateChange) forControlEvents:UIControlEventTouchUpInside];
+  [_mostRateButton setTitle:@"2.0" forState:UIControlStateNormal];
+  _mostRateButton.backgroundColor = [UIColor blueColor];
+  [self.view addSubview:_mostRateButton];
+  [self.mostRateButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.mas_equalTo(weakself.moreRateButton.mas_right).offset(20);
+    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(150);
+    make.width.height.mas_equalTo(30);
+  }];
+  
+  UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+  closeButton.backgroundColor = [UIColor redColor];
+  [closeButton setFrame:CGRectMake(0, 0, 23, 23)];
+  [closeButton addTarget:self action:@selector(closeViewController) forControlEvents:UIControlEventTouchUpInside];
+  UIBarButtonItem *closeItem = [[UIBarButtonItem alloc] initWithCustomView:closeButton];
+  self.navigationItem.leftBarButtonItems = @[closeItem];
 }
 
 #pragma 进度条更新
@@ -196,6 +254,7 @@
     
   }else{
     self.sliderProgress.value = cur.position;//播放进度
+    [self updateSliderUI:self.sliderProgress];
   }
   // 总时长
   self.totalTime = self.playbackTime/cur.position;
@@ -211,8 +270,8 @@
   float contentlength = (float)self.audioStream.contentLength;
   if (contentlength>0) {
     self.playerProgress.progress = prebuffer /contentlength;//缓存进度
-    
-    NSLog(@"------%f-----%f",prebuffer,contentlength);
+    self.playerProgress.progressTintColor = [UIColor redColor];
+    //NSLog(@"------%f-----%f",prebuffer,contentlength);
   }
 }
 
@@ -224,6 +283,7 @@
   double minutesElapsed = floor(fmod(sliderBackTime/ 60.0,60.0));
   double secondsElapsed = floor(fmod(sliderBackTime, 60.0));
   self.nowTimeLabel.text = [NSString stringWithFormat:@"%02.0f:%02.0f",minutesElapsed, secondsElapsed];
+  [self updateSliderUI:slider];
 }
 
 - (void)reloadprogressValue{
@@ -287,6 +347,43 @@
   [self.audioStream seekToPosition:pos];
 }
 
+#pragma mark - streamerPlayRate
+
+- (void)lowRateChange {
+  self.state = ADLowState;
+  [self.audioStream setPlayRate:0.5];
+}
+
+- (void)normalRateChange {
+  self.state = ADNormalState;
+  [self.audioStream setPlayRate:1.0];
+}
+
+- (void)moreRateChange {
+  self.state = ADMoreState;
+  [self.audioStream setPlayRate:1.5];
+}
+
+- (void)mostRateChange {
+  self.state = ADMostState;
+  [self.audioStream setPlayRate:2.0];
+}
+
+#pragma mark - UISliderUI
+- (void)updateSliderUI:(UISlider *)slider{
+  __weak AudioPlayerViewController *weakself = self;
+  CGFloat leftDistance = ([UIScreen mainScreen].bounds.size.width - 130) * slider.value;
+  [self.nowTimeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+    make.left.mas_equalTo(leftDistance + 60);
+    make.top.mas_equalTo(weakself.sliderProgress.mas_bottom).offset(15);
+    make.width.mas_equalTo(50);
+    make.height.mas_equalTo(10);
+  }];
+}
+- (void)closeViewController {
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)dealloc{
   NSLog(@"音频播放释放");
   [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -294,6 +391,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
   [super viewWillDisappear:animated];
+  [self.playerTimer invalidate];
   [self playerItemDealloc];
 }
 
@@ -305,7 +403,7 @@
       [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
     }
   }
-  [[AudioTools shareInstance] stop];
+  [self.audioStream stop];
   _audioStream = nil;
 }
 @end

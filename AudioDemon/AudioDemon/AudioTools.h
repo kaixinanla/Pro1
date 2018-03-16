@@ -9,13 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <FSAudioStream.h>
 
-@interface AudioTools : NSObject
+@interface AudioTools : FSAudioStream
 
 @property (nonatomic, strong) NSDictionary *audioDic;
 
 + (AudioTools *)shareInstance;
 - (FSAudioStream *)playerInit;
-- (void)stop;
-- (void)play;
-- (void)backProgress;
 @end
