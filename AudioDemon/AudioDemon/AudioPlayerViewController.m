@@ -17,6 +17,7 @@
 @property (nonatomic, strong) FSAudioStream *audioStream;
 @property (nonatomic, assign) CGFloat playbackTime;
 @property (nonatomic, strong) NSTimer *playerTimer;
+@property (nonatomic, strong) dispatch_source_t timer;
 @property (nonatomic, strong) UIImageView *audioTitleImage;
 @property (nonatomic, strong) UILabel *nowTimeLabel;
 @property (nonatomic, strong) UILabel *totalTimeLabel;
@@ -70,7 +71,16 @@
   };
   
   self.isPlaying = YES;
-  self.playerTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(playProgressAction) userInfo:nil repeats:YES];
+  //self.playerTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(playProgressAction) userInfo:nil repeats:YES];
+  dispatch_queue_t queue = dispatch_get_main_queue();
+  self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+  dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC));
+  uint64_t interval = (uint64_t)(1.0 * NSEC_PER_SEC);
+  dispatch_source_set_timer(self.timer, start, interval, 0);
+  dispatch_source_set_event_handler(self.timer, ^{
+    [weakSelf playProgressAction];
+  });
+  dispatch_resume(self.timer);
 }
 
 - (void)initSubviews {
@@ -399,7 +409,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
   [super viewWillDisappear:animated];
-  [self.playerTimer invalidate];
+ // [self.playerTimer invalidate];
   [self playerItemDealloc];
 }
 
