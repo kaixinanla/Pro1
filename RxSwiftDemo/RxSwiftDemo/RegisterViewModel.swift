@@ -11,6 +11,20 @@ import RxCocoa
 import RxSwift
 
 class RegisterModel {
+  
+  let username = Variable<String>("")
+  let password = Variable<String>("")
+  let repeatPassword = Variable<String>("")
   let registerTap = PublishSubject<Void>()
   
+  let usernameUnable: Observable<Result>
+  let passwordUnable: Observable<Result>
+  let repeatPasswordUnable: Observable<Result>
+  let registerBttonUnable: Observable<Bool>
+  
+  let registerResult: Observable<Result>
+  
+  init() {
+    
+  }
 }
