@@ -102,12 +102,12 @@
   _nowTimeLabel.textAlignment = NSTextAlignmentCenter;
   _nowTimeLabel.textColor = [UIColor blackColor];
   [self.view addSubview:_nowTimeLabel];
-  [self.nowTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.mas_equalTo(60);
-    make.top.mas_equalTo(weakself.audioTitleImage.mas_bottom).offset(40);
-    make.width.mas_equalTo(50);
-    make.height.mas_equalTo(10);
-  }];
+//  [self.nowTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//    make.left.mas_equalTo(60);
+//    make.top.mas_equalTo(weakself.audioTitleImage.mas_bottom).offset(40);
+//    make.width.mas_equalTo(50);
+//    make.height.mas_equalTo(10);
+//  }];
 
   _playerProgress = [[UIProgressView alloc] init];
   _playerProgress.transform = CGAffineTransformMakeScale(1.0f,1.0f);
@@ -142,12 +142,12 @@
   _totalTimeLabel.textAlignment = NSTextAlignmentCenter;
   _totalTimeLabel.textColor = [UIColor blackColor];
   [self.view addSubview:_totalTimeLabel];
-  [self.totalTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.left.mas_equalTo(weakself.sliderProgress.mas_right).offset(0);
-    make.top.mas_equalTo(weakself.audioTitleImage.mas_bottom).offset(40);
-    make.width.mas_equalTo(50);
-    make.height.mas_equalTo(10);
-  }];
+//  [self.totalTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//    make.left.mas_equalTo(weakself.sliderProgress.mas_right).offset(0);
+//    make.top.mas_equalTo(weakself.audioTitleImage.mas_bottom).offset(40);
+//    make.width.mas_equalTo(50);
+//    make.height.mas_equalTo(10);
+//  }];
 
   _lastButton = [UIButton buttonWithType:UIButtonTypeCustom];
   [_lastButton setImage:[UIImage imageNamed:@"lastSong"] forState:UIControlStateNormal];
@@ -155,7 +155,7 @@
   [self.view addSubview:_lastButton];
   [self.lastButton mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.mas_equalTo(100);
-    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(90);
+    make.top.mas_equalTo(weakself.playerProgress.mas_bottom).offset(90);
     make.width.height.mas_equalTo(40);
   }];
 
@@ -165,7 +165,7 @@
   [self.view addSubview:_nextButton];
   [self.nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
     make.right.mas_equalTo(-100);
-    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(90);
+    make.top.mas_equalTo(weakself.playerProgress.mas_bottom).offset(90);
     make.width.height.mas_equalTo(40);
   }];
 
@@ -176,7 +176,7 @@
   [self.view addSubview:_rewindButton];
   [self.rewindButton mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.mas_equalTo(50);
-    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(90);
+    make.top.mas_equalTo(weakself.playerProgress.mas_bottom).offset(90);
     make.width.height.mas_equalTo(40);
   }];
 
@@ -187,7 +187,7 @@
   [self.view addSubview:_forwardButton];
   [self.forwardButton mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.mas_equalTo(weakself.nextButton.mas_right);
-    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(90);
+    make.top.mas_equalTo(weakself.playerProgress.mas_bottom).offset(90);
     make.width.height.mas_equalTo(40);
   }];
   
@@ -197,7 +197,7 @@
   [self.view addSubview:_playButton];
   [self.playButton mas_makeConstraints:^(MASConstraintMaker *make) {
     make.centerX.mas_equalTo(weakself.view.mas_centerX);
-    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(90);
+    make.top.mas_equalTo(weakself.playerProgress.mas_bottom).offset(90);
     make.width.height.mas_equalTo(40);
   }];
   
@@ -208,7 +208,7 @@
   [self.view addSubview:_lowRateButton];
   [self.lowRateButton mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.mas_equalTo(40);
-    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(150);
+    make.top.mas_equalTo(weakself.playerProgress.mas_bottom).offset(150);
     make.width.height.mas_equalTo(30);
   }];
   
@@ -219,7 +219,7 @@
   [self.view addSubview:_normalRateButton];
   [self.normalRateButton mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.mas_equalTo(weakself.lowRateButton.mas_right).offset(20);
-    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(150);
+    make.top.mas_equalTo(weakself.playerProgress.mas_bottom).offset(150);
     make.width.height.mas_equalTo(30);
   }];
   
@@ -230,7 +230,7 @@
   [self.view addSubview:_moreRateButton];
   [self.moreRateButton mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.mas_equalTo(weakself.normalRateButton.mas_right).offset(20);
-    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(150);
+    make.top.mas_equalTo(weakself.playerProgress.mas_bottom).offset(150);
     make.width.height.mas_equalTo(30);
   }];
   
@@ -241,7 +241,7 @@
   [self.view addSubview:_mostRateButton];
   [self.mostRateButton mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.mas_equalTo(weakself.moreRateButton.mas_right).offset(20);
-    make.top.mas_equalTo(weakself.totalTimeLabel.mas_bottom).offset(150);
+    make.top.mas_equalTo(weakself.playerProgress.mas_bottom).offset(150);
     make.width.height.mas_equalTo(30);
   }];
   
@@ -273,7 +273,7 @@
   }else {
     double minutesElapsed1 = floor(fmod(self.totalTime/60.0,60.0));
     double secondsElapsed1 = floor(fmod(self.totalTime,60.0));
-    self.totalTimeLabel.text = [NSString stringWithFormat:@"%02.0f:%02.0f",minutesElapsed1, secondsElapsed1];
+    self.totalTimeLabel.text = [NSString stringWithFormat:@"/  %02.0f:%02.0f",minutesElapsed1, secondsElapsed1];
   }
   //
   float  prebuffer = (float)self.audioStream.prebufferedByteCount;
@@ -319,11 +319,11 @@
 - (void)playAction {
   if (self.isPlaying == YES) {
     [self.audioStream pause];
-    [self.playerTimer setFireDate:[NSDate distantFuture]];
+    //[self.playerTimer setFireDate:[NSDate distantFuture]];
     [_playButton setImage:[UIImage imageNamed:@"bofang"] forState:UIControlStateNormal];
   }else {
     [self.audioStream pause];
-    [self.playerTimer setFireDate:[NSDate distantPast]];
+   // [self.playerTimer setFireDate:[NSDate distantPast]];
     [_playButton setImage:[UIImage imageNamed:@"audioPause"] forState:UIControlStateNormal];
   }
   self.isPlaying = !self.isPlaying;
@@ -384,11 +384,19 @@
   __weak AudioPlayerViewController *weakself = self;
   CGFloat leftDistance = ([UIScreen mainScreen].bounds.size.width - 130) * slider.value;
   [self.nowTimeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-    make.left.mas_equalTo(leftDistance + 60);
+    make.left.mas_equalTo(leftDistance + 30);
     make.top.mas_equalTo(weakself.sliderProgress.mas_bottom).offset(15);
     make.width.mas_equalTo(50);
     make.height.mas_equalTo(10);
   }];
+  
+  [self.totalTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.mas_equalTo(weakself.nowTimeLabel.mas_right).offset(0);
+    make.top.mas_equalTo(weakself.sliderProgress.mas_bottom).offset(15);
+    make.width.mas_equalTo(50);
+    make.height.mas_equalTo(10);
+  }];
+  
 }
 - (void)closeViewController {
   [self dismissViewControllerAnimated:YES completion:nil];
