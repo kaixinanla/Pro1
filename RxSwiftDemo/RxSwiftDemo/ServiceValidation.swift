@@ -22,10 +22,14 @@ class ValidationService {
     if username.count == 0 {
       return .just(.empty)
     }
+    
     if username.count < minCharactersCount {
       return .just(.failed(message: "号码长度至少6个字符"))
     }
     
+    if usernameValid(username) {
+      return .just(.failed(message:"用户名已存在"))
+    }
     return .just(.ok(message: "用户名可用"))
   }
   

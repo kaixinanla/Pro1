@@ -62,18 +62,3 @@ extension Reactive where Base:UILabel {
   }
 }
 
-extension Reactive where Base:UITextField {
-  var tapEnabled: Binder<Result> {
-    return Binder(base) { textField, result in
-      textField.isEnabled = result.isValid
-    }
-  }
-}
-
-extension Reactive where Base:UIBarButtonItem {
-  var tapEnabled: Binder<Result> {
-    return Binder(base) { barButtonItem, result in
-      barButtonItem.isEnabled = result.isValid
-    }
-  }
-}
