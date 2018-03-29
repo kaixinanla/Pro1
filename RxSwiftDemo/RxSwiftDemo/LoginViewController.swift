@@ -8,10 +8,21 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController :UIViewController {
+  
+  @IBOutlet weak var usernameTextField: UITextField!
+  @IBOutlet weak var usernameLabel: UILabel!
+  @IBOutlet weak var passwordTextField: UITextField!
+  @IBOutlet weak var loginButton: UIButton!
+  
+  var viewModel: loginViewModel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor.white
   }
+  
+
 }

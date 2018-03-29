@@ -30,17 +30,17 @@ class RegisterViewController: UIViewController {
   func setupUI() {
     view.backgroundColor  = UIColor.white
     title = "注册"
-    let loginButton = UIButton(frame: CGRect(x: 0, y: 0, width: 26, height: 26))
-    loginButton.setTitle("登陆", for: .normal)
-    loginButton .setTitleColor(UIColor.blue, for: .normal)
-    loginButton .setTitleColor(UIColor.gray, for: .highlighted)
-    let buttonItem = UIBarButtonItem(customView: loginButton)
-    navigationItem.rightBarButtonItem = buttonItem
-    weak var weakself = self
-    loginButton.rx.tap.asObservable().subscribe(onNext:{
-      let vc = LoginViewController()
-      weakself?.navigationController?.pushViewController(vc, animated: true)
-    }).disposed(by: disposeBag)
+//    let loginButton = UIButton(frame: CGRect(x: 0, y: 0, width: 26, height: 26))
+//    loginButton.setTitle("登陆", for: .normal)
+//    loginButton .setTitleColor(UIColor.blue, for: .normal)
+//    loginButton .setTitleColor(UIColor.gray, for: .highlighted)
+//    let buttonItem = UIBarButtonItem(customView: loginButton)
+//    navigationItem.rightBarButtonItem = buttonItem
+//    weak var weakself = self
+//    loginButton.rx.tap.asObservable().subscribe(onNext:{
+//      let vc = LoginViewController()
+//      weakself?.navigationController?.pushViewController(vc, animated: true)
+//    }).disposed(by: disposeBag)
   }
   
   func setupActionEvent() {
