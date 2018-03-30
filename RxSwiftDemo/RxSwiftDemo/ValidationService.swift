@@ -1,5 +1,5 @@
 //
-//  ServiceValidation.swift
+//  ValidationService.swift
 //  RxSwiftDemo
 //
 //  Created by 盛嘉 on 2018/3/28.
@@ -28,7 +28,7 @@ class ValidationService {
     }
     
     if usernameValid(username) {
-      return .just(.failed(message:"用户名已存在"))
+      return .just(.failed(message: "用户名已存在"))
     }
     return .just(.ok(message: "用户名可用"))
   }
@@ -50,8 +50,12 @@ class ValidationService {
       return .empty
     }
     
-    if repeatPassword == password {
+    if repeatPassword == password && !(repeatPassword.count < minCharactersCount) {
       return .ok(message: "密码符合")
+    }
+    
+    if repeatPassword.count < minCharactersCount {
+      return .failed(message: "确认密码长度至少6个字符")
     }
     
     return .failed(message: "两次密码不一致")

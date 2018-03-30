@@ -224,6 +224,12 @@
                         <viewLayoutGuide key="safeArea" id="4vT-fH-OuY"/>
                     </view>
                     <navigationItem key="navigationItem" id="WfP-nc-J1q"/>
+                    <connections>
+                        <outlet property="loginButton" destination="xV6-Mt-U9g" id="lf8-hp-vIA"/>
+                        <outlet property="passwordTextField" destination="FLE-yY-WHi" id="nh8-X6-IDC"/>
+                        <outlet property="usernameLabel" destination="hOM-1A-qoW" id="jQ7-d3-P6f"/>
+                        <outlet property="usernameTextField" destination="Qmr-ZV-0M6" id="nTh-tr-jRI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="arY-GV-eNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
