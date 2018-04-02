@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		148BC3E920720A1F0035197F /* SomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148BC3E820720A1F0035197F /* SomeViewController.swift */; };
 		32CFA5042AA266A54C0BE5DD /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E92FBDB5E5E1951FDED6F0 /* Pods_RxSwiftDemo.framework */; };
 		C7701EBB1F171A6F006EDEF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7701EBA1F171A6F006EDEF7 /* AppDelegate.swift */; };
 		C7701EBD1F171A6F006EDEF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7701EBC1F171A6F006EDEF7 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		148BC3E820720A1F0035197F /* SomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeViewController.swift; sourceTree = "<group>"; };
 		4557FF21A250DB7B83380ED1 /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		58026ADB9A863FB506C0B8E8 /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C7701EB71F171A6F006EDEF7 /* RxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 				C7BDD2CC1F5D539300841034 /* ValidatedModel.swift */,
 				C7BDD2B91F5D4C0A00841034 /* MVVM */,
 				C7BDD2CE1F5D56F300841034 /* Supporting Files */,
+				148BC3E820720A1F0035197F /* SomeViewController.swift */,
 			);
 			path = RxSwiftDemo;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				C7701EBD1F171A6F006EDEF7 /* ViewController.swift in Sources */,
 				C7BDD2CD1F5D539300841034 /* ValidatedModel.swift in Sources */,
 				C7BDD2CB1F5D538900841034 /* ViewModel.swift in Sources */,
+				148BC3E920720A1F0035197F /* SomeViewController.swift in Sources */,
 				C7701EBB1F171A6F006EDEF7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

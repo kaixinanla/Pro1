@@ -24,6 +24,20 @@ class LoginViewController :UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupActionEvent()
+    for point in cartesianSequence(xCount: 5, yCount: 3) {
+      print("(x:\(point.x), y:\(point.y)")
+    }
+  }
+  typealias potintType = (x:Int, y:Int)
+  
+  func cartesianSequence(xCount: Int, yCount: Int) -> UnfoldSequence<potintType, Int> {
+    assert(xCount > 0 && yCount > 0)
+    return sequence(state: 0, next: {
+      (index: inout Int) -> potintType? in
+      guard index < xCount * yCount else {return nil}
+      defer {index += 1}
+      return (x:index % xCount, y: index/xCount)
+    })
   }
   
   func setupActionEvent() {
