@@ -9,6 +9,7 @@ target 'AudioDemon' do
   pod 'DOUAudioStreamer', '~> 0.2.15'
   pod 'Masonry'
   pod 'FreeStreamer', '~> 3.7.2'
+  pod 'lottie-ios'
 
   # Pods for AudioDemon
 

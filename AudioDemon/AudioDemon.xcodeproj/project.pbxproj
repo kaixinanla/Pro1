@@ -17,6 +17,8 @@
 		1430B2272058FAE700BE1A16 /* AudioDemonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430B2262058FAE700BE1A16 /* AudioDemonUITests.m */; };
 		1430B2362059006100BE1A16 /* AudioTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430B2352059006100BE1A16 /* AudioTools.m */; };
 		1430B239205908BD00BE1A16 /* AudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430B238205908BD00BE1A16 /* AudioPlayerViewController.m */; };
+		145139B02080AF9A008BC606 /* LottieLogo1.json in Resources */ = {isa = PBXBuildFile; fileRef = 145139AF2080AF9A008BC606 /* LottieLogo1.json */; };
+		145139B22080B1FE008BC606 /* Boat_Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 145139B12080B1FE008BC606 /* Boat_Loader.json */; };
 		1472A561205A250600D9338B /* GetNetWorkingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1472A560205A250600D9338B /* GetNetWorkingTool.m */; };
 		37E0BE59597CAF68D647C017 /* libPods-AudioDemonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADB4BAE008CB15B375877DB /* libPods-AudioDemonTests.a */; };
 		443B8B1889089767E5160E72 /* libPods-AudioDemonUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5D9E634398EADB89B24D10 /* libPods-AudioDemonUITests.a */; };
@@ -62,6 +64,8 @@
 		1430B2352059006100BE1A16 /* AudioTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioTools.m; sourceTree = "<group>"; };
 		1430B237205908BD00BE1A16 /* AudioPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerViewController.h; sourceTree = "<group>"; };
 		1430B238205908BD00BE1A16 /* AudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerViewController.m; sourceTree = "<group>"; };
+		145139AF2080AF9A008BC606 /* LottieLogo1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = LottieLogo1.json; path = ../../../../../Desktop/LottieLogo1.json; sourceTree = "<group>"; };
+		145139B12080B1FE008BC606 /* Boat_Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Boat_Loader.json; path = ../../../../../Desktop/Boat_Loader.json; sourceTree = "<group>"; };
 		145951EA205BC6C5006A6DA5 /* AudioDemon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AudioDemon.entitlements; sourceTree = "<group>"; };
 		1472A55F205A250600D9338B /* GetNetWorkingTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetNetWorkingTool.h; sourceTree = "<group>"; };
 		1472A560205A250600D9338B /* GetNetWorkingTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetNetWorkingTool.m; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		1430B2012058FAE700BE1A16 /* AudioDemon */ = {
 			isa = PBXGroup;
 			children = (
+				145139B12080B1FE008BC606 /* Boat_Loader.json */,
+				145139AF2080AF9A008BC606 /* LottieLogo1.json */,
 				145951EA205BC6C5006A6DA5 /* AudioDemon.entitlements */,
 				1430B2022058FAE700BE1A16 /* AppDelegate.h */,
 				1430B2032058FAE700BE1A16 /* AppDelegate.m */,
@@ -314,7 +320,9 @@
 			files = (
 				1430B20F2058FAE700BE1A16 /* LaunchScreen.storyboard in Resources */,
 				1430B20C2058FAE700BE1A16 /* Assets.xcassets in Resources */,
+				145139B22080B1FE008BC606 /* Boat_Loader.json in Resources */,
 				1430B20A2058FAE700BE1A16 /* Main.storyboard in Resources */,
+				145139B02080AF9A008BC606 /* LottieLogo1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +388,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8B210973B3ECC84A6BB7515C /* [CP] Embed Pods Frameworks */ = {
@@ -428,7 +436,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AFDE70C2FC78C01E064C4E7F /* [CP] Copy Pods Resources */ = {
@@ -476,7 +484,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

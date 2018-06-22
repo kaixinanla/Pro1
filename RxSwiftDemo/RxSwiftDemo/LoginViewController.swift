@@ -11,6 +11,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol MyProtocol {
+  static func foo() -> String
+}
+
 class LoginViewController :UIViewController {
   
   @IBOutlet weak var usernameTextField: UITextField!

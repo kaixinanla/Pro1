@@ -27,9 +27,7 @@ class YMDetailViewController: YMBaseViewController, UIWebViewDelegate {
     webView.loadRequest(request)
     webView.delegate = self
     view.addSubview(webView)
-    
     cyanButton .addTarget(self, action: Selector("cycButtonClisk"), for: .touchUpInside)
-    
   }
   
   func cycButtonClick() {
@@ -52,7 +50,6 @@ class YMDetailViewController: YMBaseViewController, UIWebViewDelegate {
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
 }
 
